@@ -11,7 +11,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <%= render "shared/navbar" %> <!-- 👈 Add this for navbar -->
+    </header>
+    <div class="main-container" style="margin-top: 72px">
+      <%= yield %>
+    </div>
     <%= render "shared/flashes" %>
   </body>
 
