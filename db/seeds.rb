@@ -24,7 +24,7 @@ for i in 1..151 do
     type["type"]["name"]
   end
   Pokemon.create!(number: pokemon["id"], name: pokemon["species"]["name"], description: pokemon_species["flavor_text_entries"][0]["flavor_text"], sound: pokemon["cries"]["latest"], sprite: pokemon["sprites"]["front_default"], types:, color:  pokemon_species["color"]["name"] )
-  puts "created #{pokemon["species"]["name"]}"
+  # puts "created #{pokemon["species"]["name"]}"
 end
 
 puts "finished creating #{Pokemon.all.length} pokemons!"
