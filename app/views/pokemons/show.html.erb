@@ -2,8 +2,13 @@
 <div>
   <h1>Messages</h1>
 
-  <%= simple_form_for @message do |f| %>
-    <%= f.input :text, required: true, label: "Posez votre question ici.", placeholder: "Posez votre question ici."%>
+  <% @chat.messages.each do |message| %>
+   <p><%= message.content %></p>
+  <% end %>
+
+
+  <%= simple_form_for [@chat, @message] do |f| %>
+    <%= f.input :content, required: true, label: "Posez votre question:", placeholder: "..."%>
     <%= f.button :submit, 'Envoyez', class: 'btn btn-primary' %>
   <% end %>
 </div>
