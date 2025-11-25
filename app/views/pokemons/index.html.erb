@@ -1,0 +1,28 @@
+<div class="container">
+
+  <div class="row">
+  <%# Section CHATS %>
+    <div class="col">
+
+    </div>
+
+    <%# Section MAIN (Cards + search bar) %>
+    <div class="col-9">
+      <h1>Choisissez un Pokemon</h1>
+        <div class="row">
+
+          <%# A remplacer par les CARDS de Quentin %>
+          <% @pokemons.each do |pokemon| %>
+          <div class="col-3 d-flex flex-wrap">
+            <div class="card">
+              <%= image_tag pokemon.sprite, class: "card-img-top ", alt: "pokemon picture", width: 20 %>
+              <div class="card-body">
+                <h5 class="card-title"><%= pokemon.name %></h5>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
