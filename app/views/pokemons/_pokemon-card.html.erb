@@ -5,14 +5,16 @@
       <%= image_tag(@pokemon.sprite, class: "img-blur") %>
     </div>
 
-    <div class="d-flex flex-column flex-grow-1">
+    <div class="d-flex flex-column flex-grow-1 gap-1">
       <span class="poke-number text-secondary">#<%= @pokemon.number %></span>
       <h3>
         <%= @pokemon.name %>
       </h3>
-      <% @pokemon.types.each do |type| %>
-        <div class=“badge text-bg-light”><%= type %></div>
-      <% end %>
+      <div class="d-flex flex-row gap-2 justify-content-center">
+        <% JSON.parse(@pokemon.types).each do |type| %>
+          <div class="badge rounded-pill text-bg-light bg-body-secondary fs-6"><%= type.capitalize %></div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
