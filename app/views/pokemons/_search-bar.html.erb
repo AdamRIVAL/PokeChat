@@ -1,6 +1,13 @@
-<div class="search-container">
-  <form action="#">
-    <input type="text" placeholder="Rechercher" name="search">
-    <button type="submit"><i class="fa fa-search"></i></button>
-  </form>
+<div class="row">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: pokemons_path, method: :get, class: "d-flex" do %>
+      <%= label_tag :query, "Search pokemons", class: "visually-hidden" %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Cherchez un pokemon"
+        %>
+      <%= submit_tag "Rechechez", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
