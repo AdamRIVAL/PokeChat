@@ -4,6 +4,8 @@ class PokemonsController < ApplicationController
   end
 
   def show
+    @pokemon = Pokemon.find(params[:id])
+    # Add the amazing Julien's code for create a new message
 
   end
 end
