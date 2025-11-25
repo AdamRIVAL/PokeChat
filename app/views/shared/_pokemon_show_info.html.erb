@@ -2,7 +2,7 @@
 <div class="pokemon_show_info">
 
 
-<div class="card rounded-5" style="width: 18rem;">
+<div class="card rounded-5" style="width: 20rem">
   <%= image_tag @pokemon.sprite, alt: "PikaPika", width: 200 %>
   <div class="card-body">
     <h5 class="card-title"><%= @pokemon.name %></h5>
@@ -10,13 +10,19 @@
     <p class="card-text"><%= @pokemon.description %></p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item"><%= @pokemon.types%></li>
+<div class="d-flex flex-row gap-2 justify-content-center">
+        <% JSON.parse(@pokemon.types).each do |type| %>
+          <div class="badge rounded-pill text-bg-light bg-body-secondary fs-6"><%= type.capitalize %></div>
+        <% end %>
+      </div>
     <li class="list-group-item"><%= @pokemon.color %></li>
 
   </ul>
   <div class="card-body">
   </div>
 </div>
+
+
 
 
 
