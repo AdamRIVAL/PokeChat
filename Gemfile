@@ -76,3 +76,7 @@ end
 gem "devise"
 gem "ruby_llm", "~> 1.2.0"
 gem "rest-client"
+
+gem "kramdown"
+gem "rouge"
+gem "kramdown-parser-gfm"
