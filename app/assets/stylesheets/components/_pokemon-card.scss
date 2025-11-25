@@ -1,9 +1,18 @@
 $poke-img-width: 140px;
 
+.poke-card-grid {
+  box-sizing: content-box;
+
+  .col {
+    box-sizing: border-box;
+  }
+}
+
 .poke-card {
 
   transition: .2s all ease;
   text-decoration: none;
+  overflow: hidden;
 
   img {
     width: $poke-img-width;

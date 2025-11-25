@@ -1,1 +1,13 @@
-<p>hello</p>
+<div class="border-end bg-white p-4 vh-100 chat-history d-flex flex-column gap-4">
+  <div class="heding-chat d-flex flex-row justify-content-between">
+    <h4>All chats:</h4>
+    <div class="badge rounded-pill text-bg-light bg-body-secondary fs-6">
+      <%= @chats.count %>
+    </div>
+  </div>
+  <div class="chats-container d-flex flex-column gap-2">
+    <div class="btn btn-primary">Un chat</div>
+    <div class="btn btn-primary">Un autre</div>
+    <div class="btn btn-primary">Encore un autre</div>
+  </div>
+</div>
