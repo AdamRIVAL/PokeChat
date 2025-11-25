@@ -1,0 +1,10 @@
+<%# Julien, controller messages def create %>
+<div>
+  <h1>Messages</h1>
+
+  <%= simple_form_for @message do |f| %>
+    <%= f.input :text, required: true, label: "Posez votre question ici.", placeholder: "Posez votre question ici."%>
+    <%= f.button :submit, 'Envoyez', class: 'btn btn-primary' %>
+  <% end %>
+</div>
+<%# /Julien, controller messages def create%>
