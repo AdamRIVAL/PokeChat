@@ -11,6 +11,9 @@
   </head>
 
   <body>
+    <header>
+      <%= render "shared/navbar" %> <!-- 👈 Add this for navbar -->
+    </header>
     <%= yield %>
     <%= render "shared/flashes" %>
   </body>

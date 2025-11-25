@@ -43,6 +43,10 @@ $poke-img-width: 140px;
     font-size: 22px;
   }
   &:hover {
-    background-color: $light-gray !important;
+    background-color: $card-light-gray !important;
+
+    .img-blur {
+      transform: scale(1.5);
+    }
   }
 }
