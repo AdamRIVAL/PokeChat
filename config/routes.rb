@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "pokemons#index"
   resources :pokemons, only:[:index, :show]
-  resources :messages, only:[:create]
-  resources :chats, only:[:destroy]
+  resources :chats, only:[:destroy] do
+    resources :messages, only:[:create]
+  end
 end

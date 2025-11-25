@@ -10,5 +10,10 @@ class PokemonsController < ApplicationController
   def show
     @pokemon = Pokemon.find(params[:id])
     # Add the amazing Julien's code for create a new message
+    @message = Message.new
+    @chat = Chat.find_by(user: current_user, pokemon: @pokemon)
+    if @chat.nil?
+      @chat = Chat.create(user: current_user, pokemon: @pokemon)
+    end
   end
 end
