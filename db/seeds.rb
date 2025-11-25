@@ -28,4 +28,4 @@ for i in 1..151 do
 end
 
 puts "finished creating #{Pokemon.all.length} pokemons!"
->
+
