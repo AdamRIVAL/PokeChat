@@ -7,3 +7,9 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts 'destroy pokemon'
+Pokemon.destroy_all
+
+puts "new pokemon"
+Pokemon.create!(number: 24, name: "Bulbi Test", types: ["grass", "poison"], sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png", color: "green" )
+puts "FINISH"
