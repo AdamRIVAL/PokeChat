@@ -6,4 +6,5 @@ class PokemonsController < ApplicationController
   def show
 
   end
-end
+
+

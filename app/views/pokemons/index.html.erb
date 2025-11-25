@@ -6,13 +6,13 @@
       <%= render "pokemons/chat-history" %>
     </div>
 
-    <%# Section MAIN (Cards + search bar) %>
+    <%# Section PRINCIPALE (Cards + search bar) %>
     <div class="col-9">
       <h2>Avec quel Pokemon souhaitez-vous discuter ?</h2>
-      <%= render "pokemons/search-bar" %>
-        <div class="row row-cols-3">
 
-          <%# A remplacer par les CARDS de Quentin %>
+      <%= render "pokemons/search-bar" %>
+
+        <div class="row row-cols-3">
           <% @pokemons.each do |pokemon| %>
           <div class="col p-2">
           <%= render "pokemons/pokemon-card", pokemon: pokemon %>
@@ -21,4 +21,5 @@
         </div>
     </div>
   </div>
+
 </div>
