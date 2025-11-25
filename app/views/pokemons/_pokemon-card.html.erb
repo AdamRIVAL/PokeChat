@@ -1,20 +1,20 @@
-<div class="card bg-white poke-card rounded text-center">
+<%= link_to pokemon_path(pokemon), class: "card bg-white poke-card rounded text-center" do %>
   <div class="card-body d-flex flex-column justify-content-center">
     <div class="poke-card-img">
-      <%= image_tag(@pokemon.sprite, class: "img-main") %>
-      <%= image_tag(@pokemon.sprite, class: "img-blur") %>
+      <%= image_tag(pokemon.sprite, class: "img-main") %>
+      <%= image_tag(pokemon.sprite, class: "img-blur") %>
     </div>
 
     <div class="d-flex flex-column flex-grow-1 gap-1">
-      <span class="poke-number text-secondary">#<%= @pokemon.number %></span>
+      <span class="poke-number text-secondary">#<%= pokemon.number %></span>
       <h3>
-        <%= @pokemon.name.capitalize %>
+        <%= pokemon.name.capitalize %>
       </h3>
       <div class="d-flex flex-row gap-2 justify-content-center">
-        <% @pokemon.types.each do |type| %>
+        <% pokemon.types.each do |type| %>
           <div class="badge rounded-pill text-bg-light bg-body-secondary fs-6"><%= type.capitalize %></div>
         <% end %>
       </div>
     </div>
   </div>
-</div>
+<% end %>

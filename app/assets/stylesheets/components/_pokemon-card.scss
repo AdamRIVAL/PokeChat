@@ -3,6 +3,7 @@ $poke-img-width: 140px;
 .poke-card {
 
   transition: .2s all ease;
+  text-decoration: none;
 
   img {
     width: $poke-img-width;
