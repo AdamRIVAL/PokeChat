@@ -18,3 +18,8 @@ $poke-number-font: "Pixelify Sans", sans-serif;
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+h1, h2, h3, h4 {
+  font-weight: 600 !important;
+  margin: 0 !important;
+}
