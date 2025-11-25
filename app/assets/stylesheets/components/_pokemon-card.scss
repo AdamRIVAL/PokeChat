@@ -1,0 +1,38 @@
+$poke-img-width: 140px;
+
+.poke-card {
+
+  transition: .2s all ease;
+
+  img {
+    width: $poke-img-width;
+  }
+  .poke-card-img {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+  }
+  .img-main {
+    position: relative;
+    z-index: 99;
+  }
+  .img-blur {
+    position: absolute;
+    z-index: 0;
+    top: 8px;
+    left: 0;
+    transform: scale(1.3);
+    filter: blur(32px);
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .poke-number {
+    font-family: $poke-number-font;
+    font-size: 22px;
+  }
+  &:hover {
+    background-color: $light-gray !important;
+  }
+}
