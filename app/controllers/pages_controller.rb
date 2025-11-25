@@ -4,8 +4,8 @@ class PagesController < ApplicationController
   def home
 
     # pour voir mon pokémon test :
-    @pokemon = Pokemon.first
+    @pokemon = Pokemon.find_by(number: 32)
     # FIN TEST
-    
+
   end
 end

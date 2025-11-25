@@ -10,7 +10,9 @@
       <h3>
         <%= @pokemon.name %>
       </h3>
-      
+      <% @pokemon.types.each do |type| %>
+        <div class=“badge text-bg-light”><%= type %></div>
+      <% end %>
     </div>
   </div>
 </div>
