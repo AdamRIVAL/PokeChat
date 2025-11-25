@@ -1,4 +1,16 @@
 .chat-history {
   position: fixed;
   width: 25%;
+  overflow-y: scroll;
+
+  .chat-pokemon {
+    p {
+      font-weight: 600;
+      font-size: 1.075rem;
+    }
+    img {
+      width: 32px;
+    }
+  }
+
 }

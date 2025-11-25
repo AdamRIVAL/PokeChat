@@ -1,7 +1,7 @@
 class PokemonsController < ApplicationController
   def index
     @pokemons = Pokemon.all.order(:number)
-    @chats = Chat.all
+    @chats = current_user.chats
     if params[:query].present?
     @pokemons = @pokemons.where("name ILIKE ?", "%#{params[:query]}%")
     end
