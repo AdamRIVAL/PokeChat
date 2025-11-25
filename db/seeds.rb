@@ -16,10 +16,10 @@ Pokemon.destroy_all
 
 puts "creating 151 pokemons..."
 for i in 1..151 do
-  responce = RestClient.get "https://pokeapi.co/api/v2/pokemon/#{i}"
-  pokemon = JSON.parse(responce)
-  responce_species = RestClient.get "https://pokeapi.co/api/v2/pokemon-species/#{i}"
-  pokemon_species = JSON.parse(responce_species)
+  response = RestClient.get "https://pokeapi.co/api/v2/pokemon/#{i}"
+  pokemon = JSON.parse(response)
+  response_species = RestClient.get "https://pokeapi.co/api/v2/pokemon-species/#{i}"
+  pokemon_species = JSON.parse(response_species)
   types = pokemon["types"].map do |type|
     type["type"]["name"]
   end
