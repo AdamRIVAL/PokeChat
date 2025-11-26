@@ -42,6 +42,14 @@ $poke-img-width: 140px;
     font-family: $poke-number-font;
     font-size: 22px;
   }
+
+  .poke-types img {
+    width: initial;
+    height: 18px;
+    border-radius: $border-radius-sm;
+  }
+
+
   &:hover {
     background-color: $card-light-gray !important;
 
