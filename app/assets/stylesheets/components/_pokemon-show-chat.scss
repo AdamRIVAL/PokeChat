@@ -1,18 +1,21 @@
-.message-chat{
-  margin-top: 50px;
-  margin-right: 30px;
+.message-chat {
+  .pokemon-response {
+    p::first-line {
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+  }
 }
-
 .form-chat{
   position: fixed;
   bottom: 0;
   gap: 10px;
   padding: 10px;
-  width: 100%;
+  
   background-color: rgb(244, 244, 244);
 
-
-
-
+  form div {
+    flex-grow: 1;
+  }
 
 }
