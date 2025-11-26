@@ -21,7 +21,7 @@
 <div class= "form-chat">
   <%= simple_form_for [@chat, @message] do |f| %>
     <%= f.input :content, required: true, label: " ", placeholder: "Have a chit chat with #{@pokemon.name}"%>
-    <%= f.button :submit, 'Envoyez', class: 'btn btn-primary' %>
+    <%= f.button :submit, 'Envoyez', class: 'btn btn-primary', id: "btn-summit" %>
   <% end %>
 </div>
 </div>
