@@ -20,12 +20,17 @@ for i in 1..151 do
   pokemon = JSON.parse(response)
   response_species = RestClient.get "https://pokeapi.co/api/v2/pokemon-species/#{i}"
   pokemon_species = JSON.parse(response_species)
+  # types = pokemon["types"].map do |type|
+  #   type["type"]["name"]
+  # end
   types = pokemon["types"].map do |type|
-    type["type"]["name"]
+    url = type["type"]["url"]
+    response_types = RestClient.get url
+    parse_types = JSON.parse(response_types)
+    parse_types["sprites"]["generation-viii"]["sword-shield"]["name_icon"]
   end
   Pokemon.create!(number: pokemon["id"], name: pokemon["species"]["name"], description: pokemon_species["flavor_text_entries"][0]["flavor_text"], sound: pokemon["cries"]["latest"], sprite: pokemon["sprites"]["front_default"], types:, color:  pokemon_species["color"]["name"] )
   # puts "created #{pokemon["species"]["name"]}"
 end
 
 puts "finished creating #{Pokemon.all.length} pokemons!"
-
