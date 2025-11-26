@@ -29,8 +29,15 @@ for i in 1..151 do
     parse_types = JSON.parse(response_types)
     parse_types["sprites"]["generation-viii"]["sword-shield"]["name_icon"]
   end
-  Pokemon.create!(number: pokemon["id"], name: pokemon["species"]["name"], description: pokemon_species["flavor_text_entries"][0]["flavor_text"], sound: pokemon["cries"]["latest"], sprite: pokemon["sprites"]["front_default"], types:, color:  pokemon_species["color"]["name"] )
-  # puts "created #{pokemon["species"]["name"]}"
+
+  french_name = pokemon_species["names"].find do |name|
+    name["language"]["name"] == "fr"
+  end
+
+  french_description = pokemon_species["flavor_text_entries"].find do |description|
+    description["language"]["name"] == "fr"
+  end
+  Pokemon.create!(number: pokemon["id"], name: french_name["name"], description: french_description["flavor_text"], sound: pokemon["cries"]["latest"], sprite: pokemon["sprites"]["front_default"], types:, color:  pokemon_species["color"]["name"] )
 end
 
 puts "finished creating #{Pokemon.all.length} pokemons!"
