@@ -7,18 +7,18 @@
         <h5 class="card-title"><%= @pokemon.name %></h5>
         <p class="card-text"><%= @pokemon.description %></p>
     </div>
-    <ul class="list-group list-group-flush"></ul>
+
     <div class="d-flex flex-row p-3 gap-2 justify-content-center">
       <% @pokemon.types.each do |type| %>
-      <div class="badge rounded-pill text-bg-light bg-body-secondary fs-6">
-        <%= type.capitalize %>
+      <div class="type-tag">
+        <%= image_tag type %>
       </div>
         <% end %>
     </div>
 
 </div>
 
-<div>
+<div class= "link-home">
 
   <%= link_to "Go back to the catch them all home", pokemons_path, class:"btn btn-warning rounded-3 mt-5" %>
 
