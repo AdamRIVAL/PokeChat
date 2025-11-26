@@ -11,7 +11,7 @@
     <div class="d-flex flex-row p-3 gap-2 justify-content-center">
       <% @pokemon.types.each do |type| %>
       <div class="badge rounded-pill text-bg-light bg-body-secondary fs-6">
-        <%= type.capitalize %>
+        <%= image_tag type %>
       </div>
         <% end %>
     </div>
