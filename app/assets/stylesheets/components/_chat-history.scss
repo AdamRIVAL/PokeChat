@@ -2,6 +2,12 @@
   position: fixed;
   width: 25%;
   overflow-y: scroll;
+  height: 92vh !important;
+
+  .chat-link{
+    text-decoration: none !important;
+    color: inherit;
+  }
 
   .chat-pokemon {
     p {
