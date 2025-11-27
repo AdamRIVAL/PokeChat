@@ -30,8 +30,8 @@
 
   <div class= "form-chat col-9 p-4">
     <%= simple_form_for [@chat, @message], html: {class: 'd-flex gap-3' } do |f| %>
-      <%= f.input :content, required: true, label: false, placeholder: "Have a chit chat with #{@pokemon.name}", input_html: {class: 'flex-grow-1' }, class: "bg-white" %>
-      <%= f.button :submit, 'Envoyez', class: 'btn btn-primary' %>
+      <%= f.input :content, required: true, label: false, placeholder: "Discutez avec #{@pokemon.name}", input_html: {class: 'flex-grow-1' }, class: "bg-white" %>
+      <%= f.button :submit, 'Envoyez', { data: {action: "click->btn-submit#animation"}, class: 'btn btn-primary', id: "btn-submit"} %>
     <% end %>
   </div>
 </div>

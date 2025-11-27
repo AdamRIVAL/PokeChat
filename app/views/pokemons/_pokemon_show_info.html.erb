@@ -7,7 +7,7 @@
   <div class="card-body">
     <div class="pokepikture">
       <div class="poke-card-img">
-        <%= image_tag(@pokemon.sprite, class: "img-main", alt: @pokemon.name) %>
+        <%= image_tag(@pokemon.sprite, class: "img-main", alt: @pokemon.name, data: {btn_submit_target: "image"}) %>
         <%= image_tag(@pokemon.sprite, class: "img-blur") %>
       </div>
     </div>
