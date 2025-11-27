@@ -8,7 +8,8 @@
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
 
-        <div class="form-inputs">
+        <div class="form-inputs" >
+
           <h2>Personnalisez votre profil</h2>
           <%= f.input :email,label:"adresse e-mail", required: true, autofocus: true %>
 
@@ -32,7 +33,7 @@
                       input_html: { autocomplete: "current-password" } %>
 
         </div>
-        <div class="footer-form">
+        <div class="footer-form"style="background-image: url('https://res.cloudinary.com/dohljjbnh/image/upload/v1764242635/8a81ecd8fdd266b3221da325875c0ea8_r17elx.gif');">
           <div class="avatar-wrapped mt-3">
             <% if current_user.photo.attached?%>
               <%= image_tag url_for(current_user.photo), class: "avatar", alt: "dropdown menu" %>
@@ -52,6 +53,7 @@
 
 
     </div>
+
   </div>
 
 </div>
