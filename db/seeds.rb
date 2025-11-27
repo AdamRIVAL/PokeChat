@@ -13,8 +13,10 @@ require "rest-client"
 #   end
 puts "Cleaning database"
 Pokemon.destroy_all
+Chat.destroy_all
+User.destroy_all
 
-puts "creating 151 pokemons..."
+puts "Creating 151 pokemons..."
 for i in 1..151 do
   response = RestClient.get "https://pokeapi.co/api/v2/pokemon/#{i}"
   pokemon = JSON.parse(response)
@@ -40,4 +42,4 @@ for i in 1..151 do
   Pokemon.create!(number: pokemon["id"], name: french_name["name"], description: french_description["flavor_text"], sound: pokemon["cries"]["latest"], sprite: pokemon["sprites"]["front_default"], types:, color:  pokemon_species["color"]["name"] )
 end
 
-puts "finished creating #{Pokemon.all.length} pokemons!"
+puts "Finished creating #{Pokemon.all.length} pokemons!"
