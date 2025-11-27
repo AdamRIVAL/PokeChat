@@ -14,3 +14,24 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.avatar-wrapped{
+  border-radius: 50%;
+  overflow: hidden;
+  height: 80px;
+  width: 80px;
+
+  .avatar{
+
+    height: 100%;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+    &:hover{
+      opacity: 0.8;
+      transition: 0.8s;
+
+
+    }
+  }
+}
