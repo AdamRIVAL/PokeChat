@@ -13,7 +13,7 @@
         <h2>Avec quel Pokemon souhaitez-vous discuter ?</h2>
         <%= render "pokemons/search-bar" %>
       </div>
-      <div class="row row-cols-1 poke-card-grid <%= @chats.any? ? "row-cols-md-3" : "row-cols-md-4" %>" id="pokemon-list">
+      <turbo-frame class="row row-cols-1 poke-card-grid <%= @chats.any? ? "row-cols-md-3" : "row-cols-md-4" %>" id="pokemon-list" target="_top">
 
         <% @pokemons.each do |pokemon| %>
           <div class="col p-2">
@@ -21,6 +21,6 @@
           </div>
         <% end %>
 
-      </div>
+      </turbo-frame>
     </div>
 </div>

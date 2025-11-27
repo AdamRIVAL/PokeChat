@@ -9,11 +9,6 @@ class PokemonsController < ApplicationController
     if params[:query].present?
     @pokemons = @pokemons.where("name ILIKE ?", "%#{params[:query]}%")
     end
-
-    respond_to do |format|
-      format.turbo_stream { render turbo_stream: turbo_stream.replace("pokemon-list", partial: "pokemons") }
-      format.html
-    end
   end
 
   def show
