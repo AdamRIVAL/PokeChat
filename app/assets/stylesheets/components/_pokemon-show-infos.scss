@@ -79,8 +79,9 @@
 
 }
 
-#constant-tilt-shake {
+.constant-tilt-shake-on-click {
   animation: tilt-shaking 0.5s infinite;
+  animation-iteration-count: 6;
 }
 
 @keyframes tilt-shaking {
