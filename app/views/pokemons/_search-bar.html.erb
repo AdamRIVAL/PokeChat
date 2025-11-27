@@ -1,10 +1,10 @@
-<div class="row">
+<div class="row justify-content-center">
   <turbo-frame class="col-sm-8 my-3" target="pokemon-list" id="form">
-    <%= form_with url: user_signed_in? ? pokemons_path : root_path, method: :get, class: "d-flex", data: { filter_pokemons_target:"form" } do %>
+    <%= form_with url: user_signed_in? ? pokemons_path : root_path, method: :get, class: "d-flex gap-2", data: { filter_pokemons_target:"form" } do %>
       <%= label_tag :query, "Chercher un pokemon", class: "visually-hidden" %>
       <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
+            class: "form-control bg-white",
             placeholder: "Chercher un pokemon",
             data: { action:"keyup->filter-pokemons#filter" }
         %>

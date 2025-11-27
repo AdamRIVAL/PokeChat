@@ -1,22 +1,26 @@
- <div class="d-flex">
+<div class="d-flex">
 
-  <%# Section CHATS %>
-  <div class="col">
-    <div class="chat-history">
-      <%= render "pokemons/chat-history", chats: @chats %>
+    <%# Section CHATS %>
+    <div class="<%= @chats.any? ? "col-3" : "d-none" %>">
+      <div class="chat-history">
+        <%= render "pokemons/chat-history", chats: @chats %>
+      </div>
     </div>
-  </div>
 
-  <%# Section MAIN (Cards + search bar) %>
-  <div class="container col-9 p-4" data-controller="filter-pokemons" >
-    <h2>Avec quel Pokemon souhaitez-vous discuter ?</h2>
-    <%= render "pokemons/search-bar" %>
-    <turbo-frame class="row row-cols-3 poke-card-grid" id="pokemon-list" target="_top">
-      <% @pokemons.each do |pokemon| %>
-        <div class="col p-2">
+    <%# Section MAIN (Cards + search bar) %>
+    <div class="container p-4 <%= @chats.any? ? "col-9" : "col-12" %>" data-controller="filter-pokemons">
+      <div class="main-head-search my-4 text-center">
+        <h2>Avec quel Pokemon souhaitez-vous discuter ?</h2>
+        <%= render "pokemons/search-bar" %>
+      </div>
+      <turbo-frame class="row row-cols-1 poke-card-grid <%= @chats.any? ? "row-cols-md-3" : "row-cols-md-4" %>" id="pokemon-list" target="_top">
+
+        <% @pokemons.each do |pokemon| %>
+          <div class="col p-2">
           <%= render "pokemons/pokemon-card", pokemon: pokemon %>
-        </div>
-      <% end %>
-    </turbo-frame>
-  </div>
+          </div>
+        <% end %>
+
+      </turbo-frame>
+    </div>
 </div>

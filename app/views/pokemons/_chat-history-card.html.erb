@@ -1,13 +1,13 @@
-  <div class="btn btn-light d-flex align-items-center">
-    <%= link_to pokemon_path(pokemon), class: "chat-link flex-grow-1" do %>
-      <div class="d-flex flex-row gap-2 align-items-center chat-pokemon">
-        <%= image_tag(chat.pokemon.sprite) %>
-        <p><%= chat.pokemon.name.capitalize %></p>
-      </div>
-      <p class="text-start text-secondary"><%= chat.title %></p>
-    <% end %>
+<div class="btn btn-light d-flex align-items-center chat-card">
+  <%= link_to pokemon_path(pokemon), class: "chat-link flex-grow-1" do %>
+    <div class="d-flex flex-row gap-2 align-items-center chat-pokemon">
+      <%= image_tag(chat.pokemon.sprite) %>
+      <p><%= chat.pokemon.name.capitalize %></p>
+    </div>
+    <p class="text-start text-secondary"><%= chat.title %></p>
+  <% end %>
 
-    <%= link_to chat_path(chat), data: {turbo_method: :delete} do %>
-      <div class="btn btn-close"></div>
-    <% end %>
-  </div>
+  <%= link_to chat_path(chat), class: "delete-chat", data: {turbo_method: :delete} do %>
+    <div class="btn btn-close"></div>
+  <% end %>
+</div>

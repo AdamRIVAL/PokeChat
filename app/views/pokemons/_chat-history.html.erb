@@ -1,11 +1,23 @@
-<div class="border-end bg-white p-4 vh-100 chat-history d-flex flex-column gap-4">
-  <div class="heding-chat d-flex flex-row justify-content-between">
-    <h4>Last chats:</h4>
-    <div class="badge rounded-pill text-bg-light bg-body-secondary fs-6">
-      <%= chats.count %>
+<div class="border-end bg-white p-3 vh-100 chat-history d-flex flex-column gap-4">
+
+  <div class="d-flex justify-content-between align-items-center">
+
+    <div class="heding-chat d-flex gap-2">
+      <h4>Chats</h4>
+      <div class="badge rounded-pill text-bg-light bg-body-secondary fs-6">
+        <%= chats.count %>
+      </div>
     </div>
+
+
+    <%= link_to destroy_all_chats_path, class: "btn btn-outline-secondary btn-sm", data: {turbo_method: :delete, turbo_confirm: "Supprimer toutes les conversations ?"} do %>
+      Tout effacer
+    <% end %>
+
   </div>
-  <div class="chats-container d-flex flex-column gap-2">
+
+
+  <div class="chats-container d-flex flex-column gap-3">
     <% chats.each do |chat| %>
     <%= render "chat-history-card", chat: chat, pokemon: chat.pokemon %>
     <% end %>

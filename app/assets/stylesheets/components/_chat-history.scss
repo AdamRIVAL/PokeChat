@@ -9,14 +9,28 @@
     color: inherit;
   }
 
-  .chat-pokemon {
-    p {
-      font-weight: 600;
-      font-size: 1.075rem;
+  .chat-card {
+
+    .chat-pokemon {
+      p {
+        font-weight: 600;
+        font-size: 1.075rem;
+      }
+      img {
+        width: 32px;
+      }
     }
-    img {
-      width: 32px;
+
+    .delete-chat {
+      opacity: 0;
     }
+
+    &:hover {
+      .delete-chat {
+        opacity: 1;
+      }
+    }
+
   }
 
 }
