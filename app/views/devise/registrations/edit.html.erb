@@ -1,8 +1,14 @@
 <div class="edit-user">
 
+      <div class="retour">
+        <div class="salameche">
+          <%= image_tag "https://res.cloudinary.com/dohljjbnh/image/upload/v1764276308/gif_temp_rluli5.gif" %>
+        </div>
+
+        <%= link_to "retour", :back, class: "btn btn-info m-5" %>
+      </div>
   <div class="container-fluid d-flex align-items-center justify-content-center">
-    <div class="col-12 col-md-6 mt-5 p-5">
-      <%= link_to "retour", :back, class: "btn btn-info mb-3" %>
+    <div class="col-12 col-md-6">
 
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -33,23 +39,29 @@
                       input_html: { autocomplete: "current-password" } %>
 
         </div>
-        <div class="footer-form"style="background-image: url('https://res.cloudinary.com/dohljjbnh/image/upload/v1764242635/8a81ecd8fdd266b3221da325875c0ea8_r17elx.gif');">
+        <div class="footer-form">
+            <%= f.file_field :photo, class: "form-control btn"%>
           <div class="avatar-wrapped mt-3">
-            <% if current_user.photo.attached?%>
-              <%= image_tag url_for(current_user.photo), class: "avatar", alt: "dropdown menu" %>
-            <%else %>
-              <%=  image_tag "https://res.cloudinary.com/dohljjbnh/image/upload/v1764168207/fkffxsqmqkaaytqvycwm.jpg", class: "avatar", alt: "dropdown menu"%>
-            <% end %>
+
+              <% if current_user.photo.attached?%>
+                <%= image_tag url_for(current_user.photo), class: "avatar", alt: "dropdown menu" %>
+              <%else %>
+                <%=  image_tag "https://res.cloudinary.com/dohljjbnh/image/upload/v1764168207/fkffxsqmqkaaytqvycwm.jpg", class: "avatar", alt: "dropdown menu"%>
+              <% end %>
+
           </div>
-          <%= f.file_field :photo, class: "form-control btn"%>
           <div class="form-actions">
-            <%= f.button :submit, "Modifier",class:"btn btn-success  m-3" %>
+            <div class="pikachu">
+
+              <%= image_tag "https://res.cloudinary.com/dohljjbnh/image/upload/v1764263959/icegif-1479_fmwdup.gif" %>
+            </div>
+            <%= f.button :submit, "Modifier",class:"btn m-3" %>
           </div>
           <% end %>
       </div>
 
 
-    <div> <%= button_to "Supprimer mon compte", registration_path(resource_name),class: "btn btn-danger mt-5", data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
+    <div class="btn-delete"> <%= button_to "Supprimer mon compte", registration_path(resource_name),class: "btn btn-danger mt-5", data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
 
 
     </div>
@@ -57,3 +69,6 @@
   </div>
 
 </div>
+
+
+<%# style="background-image: url('https://res.cloudinary.com/dohljjbnh/image/upload/v1764242635/8a81ecd8fdd266b3221da325875c0ea8_r17elx.gif');" %>
