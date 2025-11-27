@@ -1,13 +1,13 @@
   <div class="banner">
     <%= image_tag "https://wallpaper.forfun.com/fetch/2d/2d5636e8aad345345c0d88bd7a0c4f27.jpeg?w=1470&r=0.5625&f=webp", class: "banner", alt: "banner pokemon home" %>
-     <h1>Vos Pokémons favoris réunis sur Pokéchat !</h1>
+     <h1>Vos Pokemons favoris réunis sur Pokéchat !</h1>
   </div>
   <div class="container col-12 p-4">
     <h2>Avec quel Pokemon souhaitez-vous discuter ?</h2>
     <%= render "pokemons/search-bar" %>
 
     <div class="row row-cols-4 poke-card-grid">
-        <% Pokemon.order(:number).sample(12).each do |pokemon| %>
+        <% @pokemons.each do |pokemon| %>
           <div class="col p-2">
           <%= render "pokemons/pokemon-card", pokemon: pokemon %>
           </div>
