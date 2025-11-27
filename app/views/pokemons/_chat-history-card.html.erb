@@ -7,7 +7,7 @@
       <p class="text-start text-secondary"><%= chat.title %></p>
     <% end %>
 
-    <%= link_to chat_path(chat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+    <%= link_to chat_path(chat), data: {turbo_method: :delete} do %>
       <div class="btn btn-close"></div>
     <% end %>
   </div>
