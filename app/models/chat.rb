@@ -10,9 +10,9 @@ class Chat < ApplicationRecord
 
   def generate_title_from_first_message
     return unless title == DEFAULT_TITLE
-    first_user_message = messages.where(role: "user").order(:created_at).first
-    return if first_user_message.nil?
-    response = RubyLLM.chat.with_instructions(TITLE_PROMPT).ask(first_user_message.content)
+    first_pokemon_message = messages.where(role: "assistant").order(:created_at).first
+    return if first_pokemon_message.nil?
+    response = RubyLLM.chat(model: "gpt-4.1").with_instructions(TITLE_PROMPT).ask(first_pokemon_message.content)
     update(title: response.content)
   end
 end
