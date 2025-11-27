@@ -4,7 +4,7 @@
       <%= label_tag :query, "Chercher un pokemon", class: "visually-hidden" %>
       <%= text_field_tag :query,
             params[:query],
-            class: "form-control",
+            class: "form-control bg-white",
             placeholder: "Chercher un pokemon",
             data: { action:"keyup->filter-pokemons#filter" }
         %>
