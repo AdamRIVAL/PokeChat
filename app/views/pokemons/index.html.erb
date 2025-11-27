@@ -11,6 +11,12 @@
   <div class="container col-9 p-4" data-controller="filter-pokemons" >
     <h2>Avec quel Pokemon souhaitez-vous discuter ?</h2>
     <%= render "pokemons/search-bar" %>
-    <%= render "pokemons/pokemons" %>
+    <turbo-frame class="row row-cols-3 poke-card-grid" id="pokemon-list" target="_top">
+      <% @pokemons.each do |pokemon| %>
+        <div class="col p-2">
+          <%= render "pokemons/pokemon-card", pokemon: pokemon %>
+        </div>
+      <% end %>
+    </turbo-frame>
   </div>
 </div>

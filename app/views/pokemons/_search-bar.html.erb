@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-sm-8 my-3" >
-    <%= form_with url: user_signed_in? ? pokemons_path : root_path, method: :get, class: "d-flex", data: { filter_pokemons_target:"form", turbo_stream: true } do %>
+  <turbo-frame class="col-sm-8 my-3" target="pokemon-list" id="form">
+    <%= form_with url: user_signed_in? ? pokemons_path : root_path, method: :get, class: "d-flex", data: { filter_pokemons_target:"form" } do %>
       <%= label_tag :query, "Chercher un pokemon", class: "visually-hidden" %>
       <%= text_field_tag :query,
             params[:query],
@@ -10,5 +10,5 @@
         %>
       <%= submit_tag "Rechecher", name: "", class: "btn btn-primary" %>
     <% end %>
-  </div>
+  </turbo-frame>
 </div>

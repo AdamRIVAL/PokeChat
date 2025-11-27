@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
     @pokemons = Pokemon.all
     if params[:query].present?
-      @pokemons = @pokemons.where("name ILIKE ?", "%#{params[:query]}%")
+      @pokemons = @pokemons.where("name ILIKE ?", "%#{params[:query]}%").limit(12)
     elsif
       @pokemons = Pokemon.order(:number).sample(12)
     end
