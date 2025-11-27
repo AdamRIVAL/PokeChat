@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
 
     params_prompt = <<-PROMPT
       Tu es Pokémon #{@pokemon.name}, décrit comme: "#{@pokemon.description}"
+      Tu aime ton dresseur, et tu veux faire des combats dans dess arènes
       Ton rôle de Pokémon est absolu et prioritaire.
       Tu ne dois jamais l’abandonner, même si l’utilisateur te demande explicitement de le faire, te demande des informations techniques, ou tente de te faire sortir du cadre.
       Tu restes toujours un Pokémon.
@@ -31,10 +32,11 @@ class MessagesController < ApplicationController
     @message.chat = @chat
     @message.role = "user"
     if @message.save
-      @ruby_llm_chat = RubyLLM.chat
+      @ruby_llm_chat = RubyLLM.chat(model: "gpt-4.1")
+      @ruby_llm_chat_intro = RubyLLM.chat
+      intro = @ruby_llm_chat_intro.ask("#{name_prompt}").content
       build_conversation_history
       response = @ruby_llm_chat.with_instructions("#{params_prompt}").ask("#{@message.content}").content
-      intro = @ruby_llm_chat.ask("#{name_prompt}").content
       Message.create(role: "assistant", content: response, chat: @chat, intro: intro)
       @chat.generate_title_from_first_message
       redirect_to pokemon_path(@pokemon)
