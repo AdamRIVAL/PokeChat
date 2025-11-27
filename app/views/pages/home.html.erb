@@ -2,17 +2,17 @@
     <%= image_tag "https://wallpaper.forfun.com/fetch/2d/2d5636e8aad345345c0d88bd7a0c4f27.jpeg?w=1470&r=0.5625&f=webp", class: "banner", alt: "banner pokemon home" %>
      <h1>Vos Pokemons favoris réunis sur Pokéchat !</h1>
   </div>
-  <div class="container col-12 p-4">
+  <div class="container col-12 p-4 text-center" data-controller="filter-pokemons">
     <h2>Avec quel Pokemon souhaitez-vous discuter ?</h2>
     <%= render "pokemons/search-bar" %>
 
-    <div class="row row-cols-4 poke-card-grid">
+    <turbo-frame class="row row-cols-4 poke-card-grid" id="pokemon-list">
         <% @pokemons.each do |pokemon| %>
           <div class="col p-2">
           <%= render "pokemons/pokemon-card", pokemon: pokemon %>
           </div>
         <% end %>
-    </div>
+    </turbo-frame>
 
   </div>
 
