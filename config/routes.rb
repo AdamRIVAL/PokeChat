@@ -12,5 +12,8 @@ Rails.application.routes.draw do
   resources :pokemons, only:[:index, :show]
   resources :chats, only:[:destroy] do
     resources :messages, only:[:create]
+    collection do
+      delete :destroy_all
+    end
   end
 end
