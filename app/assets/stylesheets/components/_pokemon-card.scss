@@ -43,13 +43,6 @@ $poke-img-width: 140px;
     font-size: 22px;
   }
 
-  .poke-types img {
-    width: initial;
-    height: 18px;
-    border-radius: $border-radius-sm;
-  }
-
-
   &:hover {
     background-color: $card-light-gray !important;
 
@@ -57,4 +50,10 @@ $poke-img-width: 140px;
       transform: scale(1.5);
     }
   }
+}
+
+.poke-types img {
+  width: initial;
+  height: 18px;
+  border-radius: $border-radius-sm;
 }
