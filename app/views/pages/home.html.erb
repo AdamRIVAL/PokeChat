@@ -6,7 +6,7 @@
     <h2>Avec quel Pokemon souhaitez-vous discuter ?</h2>
     <%= render "pokemons/search-bar" %>
 
-    <turbo-frame class="row row-cols-4 poke-card-grid" id="pokemon-list">
+    <turbo-frame class="row row-cols-4 poke-card-grid" id="pokemon-list" target="_top">
         <% @pokemons.each do |pokemon| %>
           <div class="col p-2">
           <%= render "pokemons/pokemon-card", pokemon: pokemon %>
