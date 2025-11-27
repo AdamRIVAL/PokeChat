@@ -1,0 +1,8 @@
+
+<div class="row row-cols-3 poke-card-grid" id="pokemon-list">
+  <% @pokemons.each do |pokemon| %>
+    <div class="col p-2">
+    <%= render "pokemons/pokemon-card", pokemon: pokemon %>
+    </div>
+  <% end %>
+</div>
