@@ -1,11 +1,12 @@
 <div class="row justify-content-center">
-  <div class="col-sm-6 my-3">
-    <%= form_with url: user_signed_in? ? pokemons_path : root_path, method: :get, class: "d-flex gap-2" do %>
+  <div class="col-sm-8 my-3" >
+    <%= form_with url: user_signed_in? ? pokemons_path : root_path, method: :get, class: "d-flex gap-2", data: { filter_pokemons_target:"form", turbo_stream: true } do %>
       <%= label_tag :query, "Chercher un pokemon", class: "visually-hidden" %>
       <%= text_field_tag :query,
             params[:query],
-            class: "form-control bg-white",
-            placeholder: "Chercher un pokemon"
+            class: "form-control",
+            placeholder: "Chercher un pokemon",
+            data: { action:"keyup->filter-pokemons#filter" }
         %>
       <%= submit_tag "Rechecher", name: "", class: "btn btn-primary" %>
     <% end %>

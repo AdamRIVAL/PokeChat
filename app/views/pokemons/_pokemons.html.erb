@@ -1,0 +1,6 @@
+  <% @pokemons.each do |pokemon| %>
+    <div class="col p-2">
+    <%= render "pokemons/pokemon-card", pokemon: pokemon %>
+    </div>
+  <% end %>
+

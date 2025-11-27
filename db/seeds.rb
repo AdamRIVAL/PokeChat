@@ -16,8 +16,8 @@ Pokemon.destroy_all
 Chat.destroy_all
 User.destroy_all
 
-puts "Creating 151 pokemons..."
-for i in 1..151 do
+puts "Creating 494 pokemons..."
+for i in 1..494 do
   response = RestClient.get "https://pokeapi.co/api/v2/pokemon/#{i}"
   pokemon = JSON.parse(response)
   response_species = RestClient.get "https://pokeapi.co/api/v2/pokemon-species/#{i}"
