@@ -23,8 +23,12 @@
     width: fit-content;
   }
 
+  .col {
+    min-width: 200px;
+  }
   .pokemon_show_info{
     overflow: hidden;
+    min-width: 200px;
 
     .pokepikture{
       text-align: center;
@@ -50,10 +54,6 @@
       }
     }
 
-    // .d-flex{
-    //   flex-wrap: wrap
-    // }
-
     .type-tag{
 
 
@@ -64,13 +64,18 @@
     }
 
   }
+
   .card-body.p-3{
     text-align: center;
   }
 
-.link-home{
-  margin-left: 80px;
-}
+  .message-chat {
+    margin-bottom: 100px;
+  }
+
+  .link-home{
+    margin-left: 80px;
+  }
 
 
 }

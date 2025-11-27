@@ -1,6 +1,12 @@
 <div>
   <div class="message-chat">
-    <h3>Messages with <%= @pokemon.name %></h3>
+    <div class="chat-head d-flex justify-content-between mb-4">
+      <h3>Disctuer avec <%= @pokemon.name %></h3>
+        <%= link_to chat_path(@chat), class: "btn btn-outline-secondary", data: {turbo_method: :delete} do %>
+          <i class="fa-solid fa-arrow-rotate-left"></i>
+          Redémarrer un chat
+        <% end %>
+    </div>
     <% @chat.messages.each do |message| %>
     <% if message.role == "user" %>
         <div class="d-flex justify-content-end mb-2">
@@ -18,9 +24,9 @@
     <% end %>
   </div>
 
-  <div class= "form-chat col-9">
-    <%= simple_form_for [@chat, @message], html: {class: 'd-flex gap-2' } do |f| %>
-      <%= f.input :content, required: true, label: false, placeholder: "Have a chit chat with #{@pokemon.name}", input_html: {class: 'flex-grow-1' }%>
+  <div class= "form-chat col-9 p-4">
+    <%= simple_form_for [@chat, @message], html: {class: 'd-flex gap-3' } do |f| %>
+      <%= f.input :content, required: true, label: false, placeholder: "Have a chit chat with #{@pokemon.name}", input_html: {class: 'flex-grow-1' }, class: "bg-white" %>
       <%= f.button :submit, 'Envoyez', class: 'btn btn-primary' %>
     <% end %>
   </div>
