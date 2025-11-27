@@ -1,20 +1,31 @@
 .edit-user{
-  background-color: rgb(55, 129, 199);
   height: 100rem;
   h2{
 
     text-align: center;
   }
+  .btn.m-3{
+
+    background-color: #ffdc00
+  }
+.retour{
+  display: flex;
+      flex-direction: column;
+    align-items: flex-start;
+}
+  .btn.btn-info.m-5 {
+    background-color: #ff6602;
+    padding: 5px;
+    width: 100px;
+
+  }
 
   .simple_form.edit_user{
-  padding: 20px;
-  border-color: yellow;
-  border-radius: 30px;
-  -webkit-box-shadow:0px 0px 208px 99px rgba(255,245,46,0.92);
-  -moz-box-shadow: 0px 0px 208px 99px rgba(255,245,46,0.92);
-  box-shadow: 0px 0px 208px 99px rgba(255,245,46,0.92);
-  background-color: #24609F;
-  color: white;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: rgb(55, 129, 199);
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
   }
   .footer-form{
@@ -23,13 +34,45 @@
     align-items: center;
     gap: 5px;
   }
+.pikachu{
+  position: relative;
+  top: 17px;
+
+  right: -21px;
+  img{
+
+    height: 90px;
+  }
+}
+.salameche{
+  position: relative;
+  top: 58px;
+
+  right: -30px;
+  img{
+
+    height: 90px;
+  }
+}
+
+  .form-text{
+    color:white;
+  }
  .footer-form{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
    border-radius: 20px;
   overflow: hidden;
-  opacity: 0.8;
 
+
+  }
+  .btn-delete {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  .btn.btn-danger.mt-5{
+    background-color: #ff7878;
+  }
   }
 }
