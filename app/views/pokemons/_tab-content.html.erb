@@ -1,0 +1,37 @@
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
+    <% @pokemons.each do |pokemon| %>
+      <div class="col p-2">
+      <%= render "pokemons/pokemon-card", pokemon: pokemon %>
+      </div>
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="gen1-tab-pane" role="tabpanel" aria-labelledby="gen1-tab" tabindex="0">
+    <% @pokemons.select do {|pokemon| pokemon.generation('generation-i') } %>
+      <div class="col p-2">
+      <%= render "pokemons/pokemon-card", pokemon: pokemon %>
+      </div>
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="gen2-tab-pane" role="tabpanel" aria-labelledby="gen2-tab" tabindex="0">
+    <% @pokemons.select do {|pokemon| pokemon.generation('generation-ii') } %>
+      <div class="col p-2">
+      <%= render "pokemons/pokemon-card", pokemon: pokemon %>
+      </div>
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="gen3-tab-pane" role="tabpanel" aria-labelledby="gen3-tab" tabindex="0">
+    <% @pokemons.select do {|pokemon| pokemon.generation('generation-iii') } %>
+      <div class="col p-2">
+      <%= render "pokemons/pokemon-card", pokemon: pokemon %>
+      </div>
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="gen4-tab-pane" role="tabpanel" aria-labelledby="gen4-tab" tabindex="0">
+    <% @pokemons.select do {|pokemon| pokemon.generation('generation-iv') } %>
+      <div class="col p-2">
+      <%= render "pokemons/pokemon-card", pokemon: pokemon %>
+      </div>
+    <% end %>
+  </div>
+</div>
