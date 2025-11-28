@@ -5,15 +5,16 @@
 <!-- Formulaire -->
   <div class="col-12 col-md-6 p-5">
     <h2>Connectez-vous</h2>
-
+    <br>
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
         <%= f.input :email,
+                    label: "Identifiant (peut être un mail fictif)",
                     required: false,
                     autofocus: true,
                     input_html: { autocomplete: "email" } %>
         <%= f.input :password,
-                    label: "Mot de passe",
+                    label: "Code personnel (ne mettez pas un vrai mot de passe)",
                     required: false,
                     input_html: { autocomplete: "current-password" } %>
         <%= f.input :remember_me,
@@ -26,7 +27,10 @@
     <%= render "devise/shared/links" %>
       </div>
     <% end %>
-
+    <br>
+    <p>⚠️ Cette page ne sert pas à se connecter à un compte réel.
+Utilisez n’importe quelle adresse fictive — elle sert uniquement à retrouver vos conversations.
+Ne mettez pas de mot de passe réel.</p>
   </div>
 
 <!-- Illustration -->

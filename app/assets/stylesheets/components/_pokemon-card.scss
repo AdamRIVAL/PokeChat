@@ -16,6 +16,10 @@ $poke-img-width: 140px;
 
   img {
     width: $poke-img-width;
+
+    @media (max-width: 768px) {
+      width: $poke-img-width*.75;
+    }
   }
   .poke-card-img {
     position: relative;
@@ -37,6 +41,10 @@ $poke-img-width: 140px;
   h3 {
     font-size: 24px;
     font-weight: 600;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
   }
   .poke-number {
     font-family: $poke-number-font;
@@ -56,4 +64,7 @@ $poke-img-width: 140px;
   width: initial;
   height: 18px;
   border-radius: $border-radius-sm;
+  @media (max-width: 768px) {
+      font-size: 16px;
+    }
 }

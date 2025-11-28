@@ -10,7 +10,7 @@
       <h3>
         <%= pokemon.name.capitalize %>
       </h3>
-      <div class="d-flex flex-row gap-2 justify-content-center poke-types">
+      <div class="d-flex flex-row flex-wrap gap-2 justify-content-center poke-types">
         <% pokemon.types.each do |type| %>
           <%= image_tag type %>
         <% end %>
