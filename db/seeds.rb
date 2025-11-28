@@ -16,6 +16,7 @@ Pokemon.destroy_all
 Chat.destroy_all
 User.destroy_all
 
+# il y a 494 pokemons dans les 4 premières gen
 puts "Creating 494 pokemons..."
 for i in 1..494 do
   response = RestClient.get "https://pokeapi.co/api/v2/pokemon/#{i}"
@@ -39,7 +40,7 @@ for i in 1..494 do
   french_description = pokemon_species["flavor_text_entries"].find do |description|
     description["language"]["name"] == "fr"
   end
-  Pokemon.create!(number: pokemon["id"], name: french_name["name"], description: french_description["flavor_text"], sound: pokemon["cries"]["latest"], sprite: pokemon["sprites"]["front_default"], types:, color:  pokemon_species["color"]["name"] )
+  Pokemon.create!(number: pokemon["id"], name: french_name["name"], description: french_description["flavor_text"], sound: pokemon["cries"]["latest"], sprite: pokemon["sprites"]["front_default"], types:, color:  pokemon_species["color"]["name"], gen: pokemon_species["generation"]["name"] )
 end
 
 puts "Finished creating #{Pokemon.all.length} pokemons!"
