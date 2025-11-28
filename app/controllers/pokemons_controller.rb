@@ -16,7 +16,6 @@ class PokemonsController < ApplicationController
     # Add the amazing Julien's code for create a new message
     @message = Message.new
     @chat = Chat.find_by(user: current_user, pokemon: @pokemon)
-    @messages = @chat.messages.order(:created_at)
     if @chat.nil?
       @chat = Chat.create(user: current_user, pokemon: @pokemon, title: Chat::DEFAULT_TITLE)
     end
