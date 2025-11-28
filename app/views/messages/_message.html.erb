@@ -7,8 +7,8 @@
 <% elsif message.role == "assistant" %>
   <div class="d-flex justify-content-start" id="<%= dom_id(message) %>">
     <div class="px-4 py-2 pokemon-response">
-      <%= raw(render_markdown(message.intro)) %>
-      <%= raw(render_markdown(message.content)) %>
+      <p><%= message.intro %></p>
+      <p><%= message.content %></p>
     </div>
   </div>
 <% end %>
