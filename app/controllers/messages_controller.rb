@@ -32,12 +32,23 @@ class MessagesController < ApplicationController
     @message.chat = @chat
     @message.role = "user"
     if @message.save
+      @assistant_message = @chat.messages.create(role: "assistant", content: "", intro: "")
       @ruby_llm_chat = RubyLLM.chat(model: "gpt-4.1")
       @ruby_llm_chat_intro = RubyLLM.chat
-      intro = @ruby_llm_chat_intro.ask("#{name_prompt}").content
+      intro = @ruby_llm_chat_intro.ask(name_prompt) do |chunk|
+        next if chunk.content.blank?
+        @assistant_message.content += chunk.content
+        broadcast_replace(@assistant_message)
+      end
       build_conversation_history
-      response = @ruby_llm_chat.with_instructions("#{params_prompt}").ask("#{@message.content}").content
-      Message.create(role: "assistant", content: response, chat: @chat, intro: intro)
+      response = @ruby_llm_chat.with_instructions(params_prompt).ask(@message.content) do |chunk|
+        next if chunk.content.blank?
+        @assistant_message.content += chunk.content
+        broadcast_replace(@assistant_message)
+      end
+      @assistant_message.update(content: response.content, intro: intro.content)
+      broadcast_replace(@assistant_message)
+
       @chat.generate_title_from_first_message
       redirect_to pokemon_path(@pokemon)
     else
@@ -56,4 +67,17 @@ class MessagesController < ApplicationController
       @ruby_llm_chat.add_message(message)
     end
   end
+
+  def build_conversation_history
+    @chat.messages.each do |message|
+      next if message.content.blank?
+
+      @ruby_llm_chat.add_message(message)
+    end
+  end
+
+  def broadcast_replace(message)
+  Turbo::StreamsChannel.broadcast_replace_to(@chat, target: helpers.dom_id(message), partial: "messages/message", locals: { message: message })
+end
+
 end
