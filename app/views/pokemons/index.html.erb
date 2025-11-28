@@ -1,5 +1,10 @@
 <div class="d-flex">
 
+    <%# Bouton scroll to %>
+    <a href="#head-search" class="btn btn-secondary top-button">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
     <%# Section CHATS %>
     <div class="<%= @chats.any? ? "col-3" : "d-none" %>">
       <div class="chat-history">
@@ -8,7 +13,7 @@
     </div>
 
     <%# Section MAIN (Cards + search bar) %>
-    <div class="container p-4 <%= @chats.any? ? "col-9" : "col-12" %>" data-controller="filter-pokemons">
+    <div class="container p-4 <%= @chats.any? ? "col-9" : "col-12" %>" data-controller="filter-pokemons" id="head-search">
       <div class="main-head-search my-4 text-center">
         <h2>Avec quel Pokemon souhaitez-vous discuter ?</h2>
         <%= render "pokemons/search-bar" %>
