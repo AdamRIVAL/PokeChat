@@ -1,19 +1,23 @@
-  <div class="banner">
-    <%= image_tag "https://wallpaper.forfun.com/fetch/2d/2d5636e8aad345345c0d88bd7a0c4f27.jpeg?w=1470&r=0.5625&f=webp", class: "banner", alt: "banner pokemon home" %>
-     <h1>Vos Pokemons favoris réunis sur Pokéchat !</h1>
+<div class="p-2 p-md-5">
+  <div class="banner py-5 px-3 px-md-5 text-center rounded">
+    <h1 class="my-5 text-white">Vos Pokemons favoris réunis sur Pokéchat !</h1>
   </div>
-  <div class="container col-12 p-4 text-center" data-controller="filter-pokemons">
-    <h2>Avec quel Pokemon souhaitez-vous discuter ?</h2>
-    <%= render "pokemons/search-bar" %>
-
-    <turbo-frame class="row row-cols-4 poke-card-grid" id="pokemon-list" target="_top">
-        <% @pokemons.each do |pokemon| %>
-          <div class="col p-2">
-          <%= render "pokemons/pokemon-card", pokemon: pokemon %>
-          </div>
-        <% end %>
-    </turbo-frame>
-
-  </div>
-
 </div>
+<div class="container col-12 p-4 text-center" data-controller="filter-pokemons">
+  <div class="mb-3 mb-md-4">
+    <h2>Discutez avec un pokémon :</h2>
+    <%= render "pokemons/search-bar" %>
+  </div>
+
+  <turbo-frame class="row row-cols-2 row-cols-md-4 poke-card-grid" id="pokemon-list" target="_top">
+      <% @pokemons.each do |pokemon| %>
+        <div class="col p-2">
+        <%= render "pokemons/pokemon-card", pokemon: pokemon %>
+        </div>
+      <% end %>
+  </turbo-frame>
+</div>
+
+<footer>
+  <%= render "shared/footer" %>
+</footer>
