@@ -24,8 +24,12 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 75%;
+  width: 100%;
   background-color: rgb(244, 244, 244);
+
+  @media (min-width: 768px) {
+    width: 75%;
+  }
 
   form div {
     flex-grow: 1;

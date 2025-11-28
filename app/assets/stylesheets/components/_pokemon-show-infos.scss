@@ -14,9 +14,11 @@
     opacity: .5;
   }
 
-  .pokemon-show-sidebar {
-    position: fixed;
-    width: 25%;
+  @media (min-width: 768px) {
+    .pokemon-show-sidebar {
+      position: fixed;
+      width: 25%;
+    }
   }
 
   a:first-child {
