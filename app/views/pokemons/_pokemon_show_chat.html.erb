@@ -7,31 +7,19 @@
           Redémarrer un chat
         <% end %>
     </div>
-    <div class="messages-container d-flex flex-column gap-3">
+    <div class="messages-container d-flex flex-column gap-3" id="messages">
       <% @chat.messages.each do |message| %>
-        <% if message.role == "user" %>
-          <div class="d-flex justify-content-end">
-            <div class="bg-white px-4 py-2 rounded-pill">
-              <%= raw(render_markdown(message.content)) %>
-            </div>
-          </div>
-        <% elsif message.role == "assistant" %>
-          <div class="d-flex justify-content-start">
-            <div class="px-4 py-2 pokemon-response">
-              <%= raw(render_markdown(message.intro)) %>
-              <!-- <p><%= @pokemon.name %> vous dit :</p> -->
-              <%= raw(render_markdown(message.content)) %>
-            </div>
-          </div>
-        <% end %>
+           <%= render "messages/message", message: message %>
       <% end %>
     </div>
   </div>
 
+<turbo-frame id="message_form">
   <div class= "form-chat col-9 p-4">
     <%= simple_form_for [@chat, @message], html: {class: 'd-flex gap-3' } do |f| %>
-      <%= f.input :content, required: true, label: false, placeholder: "Discutez avec #{@pokemon.name}", input_html: {class: 'flex-grow-1' }, class: "bg-white" %>
-      <%= f.button :submit, 'Envoyez', { data: {action: "click->btn-submit#animation"}, class: 'btn btn-primary', id: "btn-submit"} %>
+      <%= f.input :content, required: true, label: false, placeholder: "Discuter avec #{@pokemon.name}", input_html: {class: 'flex-grow-1' }, class: "bg-white" %>
+      <%= f.button :submit, 'Envoyer', { data: {action: "click->btn-submit#animation"}, class: 'btn btn-primary', id: "btn-submit"} %>
     <% end %>
   </div>
+</turbo-frame>
 </div>
