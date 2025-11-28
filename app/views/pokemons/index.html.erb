@@ -15,7 +15,7 @@
         <%= render "pokemons/tabs" %>
       </div>
 
-      <turbo-frame class="row row-cols-1 poke-card-grid <%= @chats.any? ? "row-cols-md-3" : "row-cols-md-4" %>" id="pokemon-list" target="_top">
+      <turbo-frame class="row row-cols-1 poke-card-grid" id="pokemon-list" target="_top">
 
         <%= render "pokemons/tab-content" %>
 

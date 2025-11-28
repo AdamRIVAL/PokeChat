@@ -6,10 +6,15 @@ export default class extends Controller {
     console.log("Hello from our first Stimulus controller");
   }
 
-  static targets = ["form"]
+  static targets = ["form", "all", "other"]
 
   filter(event) {
-    event.preventDefault()
-    this.formTarget.requestSubmit();
-  }
+  event.preventDefault();
+  this.formTarget.requestSubmit();
+  this.allTarget.classList.add("active");
+
+  this.otherTargets.forEach(other => {
+    other.classList.remove("active");
+  });
+}
 }
