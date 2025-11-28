@@ -8,7 +8,7 @@
         <% end %>
     </div>
     <div class="messages-container d-flex flex-column gap-3" id="messages">
-      <% @chat.messages.each do |message| %>
+      <% @messages.each do |message| %>
            <%= render "messages/message", message: message %>
       <% end %>
     </div>
