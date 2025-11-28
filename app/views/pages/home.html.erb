@@ -9,13 +9,15 @@
     <%= render "pokemons/search-bar" %>
   </div>
 
-  <turbo-frame class="row row-cols-2 row-cols-md-4 poke-card-grid" id="pokemon-list" target="_top">
+  <turbo-frame class="poke-card-grid" id="pokemon-list" target="_top">
+    <div class="row">
       <% @pokemons.each do |pokemon| %>
-        <div class="col p-2">
+        <div class="col-3 p-2">
         <%= render "pokemons/pokemon-card", pokemon: pokemon %>
         </div>
       <% end %>
   </turbo-frame>
+  </div>
 </div>
 
 <footer>
