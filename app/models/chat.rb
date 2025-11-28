@@ -5,7 +5,7 @@ class Chat < ApplicationRecord
 
   DEFAULT_TITLE = "Untitled"
   TITLE_PROMPT = <<~PROMPT
-  Generate a short, descriptive, 3-to-6-word title that summarizes the user question for a chat conversation.
+  Génères un titre bref et descriptif de 3 à 6 mots qui résume le message du pokemon  pour une conversation par messages.
   PROMPT
 
   def generate_title_from_first_message
