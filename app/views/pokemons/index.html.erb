@@ -12,14 +12,12 @@
       <div class="main-head-search my-4 text-center">
         <h2>Avec quel Pokemon souhaitez-vous discuter ?</h2>
         <%= render "pokemons/search-bar" %>
+        <%= render "pokemons/tabs" %>
       </div>
-      <turbo-frame class="row row-cols-1 poke-card-grid <%= @chats.any? ? "row-cols-md-3" : "row-cols-md-4" %>" id="pokemon-list" target="_top">
 
-        <% @pokemons.each do |pokemon| %>
-          <div class="col p-2">
-          <%= render "pokemons/pokemon-card", pokemon: pokemon %>
-          </div>
-        <% end %>
+      <turbo-frame class="row row-cols-1 poke-card-grid" id="pokemon-list" target="_top">
+
+        <%= render "pokemons/tab-content" %>
 
       </turbo-frame>
     </div>
