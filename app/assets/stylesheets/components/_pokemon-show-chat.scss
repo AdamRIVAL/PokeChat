@@ -1,15 +1,20 @@
 .message-chat {
   .pokemon-response {
-    p:first-child {
-      font-size: 1.1rem;
-      font-weight: 500;
-      margin-bottom: 8px !important;
-    }
-    p:last-child {
+    p {
       padding-left: 16px;
       border-left: 1px #C7C7C7 solid;
       font-style: italic;
       color: #525252;
+    }
+    p:first-child {
+      padding: 0 !important;
+      border: none;
+      color: black;
+      font-style: initial;
+      font-weight: 600;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 8px !important;
     }
   }
 
